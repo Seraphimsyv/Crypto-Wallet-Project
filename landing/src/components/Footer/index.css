@@ -1,0 +1,177 @@
+footer {
+  padding-top: 6vh;
+  background-color: rgb(0, 25, 55);
+}
+#app__footer_navigations {
+  display: grid;
+  grid-template-columns: 
+    calc(100% / 4 - 1em) calc(100% / 6 - 1em)
+    calc(100% / 6 - 1em) calc(100% / 6 - 1em)
+    calc(100% / 6 - 1em) calc(100% / 6 - 1em)
+  ;
+  gap: 1em;
+  padding-bottom: 4vh;
+}
+
+@media screen and (max-width: 1024px) {
+  #app__footer_navigations {
+    grid-template-columns: 
+    calc(100% / 5 - 1em) calc(100% / 5 - 1em)
+    calc(100% / 5 - 1em) calc(100% / 5 - 1em)
+    calc(100% / 5 - 1em) calc(100% / 5 - 1em);
+  }
+  #app__footer_short_contact {
+    grid-column-start: 1;
+    grid-column-end: 7;
+  }
+}
+@media screen and (max-width: 768px) {
+  #app__footer_navigations {
+    grid-template-columns: 
+    calc(100% / 3 - 1em)
+    calc(100% / 3 - 1em)
+    calc(100% / 3 - 1em);
+  }
+  #app__footer_short_contact {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+@media screen and (max-width: 478px) {
+  #app__footer_navigations {
+    grid-template-columns: 
+    calc(100% / 2 - 1em)
+    calc(100% / 2 - 1em);
+  }
+  #app__footer_navigations
+  #app__footer_short_contact {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+/**
+
+  Short info styles
+
+**/
+#app__footer_short_contact {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 220px;
+  width: fit-content;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+#app__footer_short_contact #logotype {
+  padding: 0;
+}
+#app__footer_short_contact #logotype h2 {
+  color: whitesmoke;
+}
+#app__footer_short_contact h5 {
+  width: 100%;
+  color: #dde4e4;
+  margin-top: 13px;
+    margin-bottom: 26px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32.4px;
+}
+#app__footer_social {
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1em;
+}
+#app__footer_social svg {
+  width: 22px;
+  fill: #B5C7CB;
+}
+#app__footer_social a:hover svg {
+  fill: #53a0fd;
+}
+#app__footer_lang {
+  background-color: transparent;
+  background-image: url('/public/img/lang/usa.png');
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: 5% center;
+}
+#app__footer_lang select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 1em; /* Добавляем отступ для изображения */
+  padding-right: 3em;
+  padding-left: 3em;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  background-image: url('/public/img/down-arrow.svg'); /* Путь к вашему изображению галочки */
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 90% center; /* Позиция изображения справа по центру */
+  color: white;
+}
+
+
+/**
+
+  Navigations styles
+
+**/
+.app__footer_nav_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start;
+  gap: 1em;
+}
+.app__foter_nav_list_title {
+  color: whitesmoke;
+  font-size: min(max(14px, 2vh), 18px);
+  text-transform: uppercase;
+}
+.app__footer_nav_link a {
+  color: rgba(225, 225, 225, 0.75);
+  font-size: min(max(12px, 1.75vh), 14px);
+  font-weight: 600;
+  text-decoration: none;
+}
+.app__footer_nav_link a:hover {
+  color: rgba(225, 225, 225, 0.5);
+}
+#app__footer_copyright_contact_block {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 6vh;
+  border-top: 1px solid rgba(225, 225, 225, 0.25);
+}
+#app__footer_copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#app__footer_copyright span {
+  color: rgba(200, 200, 200, 0.75);
+  font-size: min(max(12px, 1.75vh), 14px);
+}
+#app__footer_contact_btn {
+  border-color: whitesmoke;
+  color: whitesmoke;
+  font-size: min(max(12px, 1.75vh), 14px);
+}
+#app__footer_contact_btn:hover {
+  background-color: rgba(225, 225, 225, 0.1);
+}
+
+@media screen and (max-width: 787px) {
+  .app__footer_nav_list {
+    text-align: center;
+  }
+}

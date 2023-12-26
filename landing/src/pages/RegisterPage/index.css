@@ -1,0 +1,287 @@
+#app__page_auth {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+@media screen and (max-width: 1024px) {
+  #app__page_auth {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 100%;
+  }
+}
+
+#app__page_auth .app__auth_register_block,
+#app__page_auth .app__auth_reviews_block {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+  #app__page_auth .app__auth_register_block,
+  #app__page_auth .app__auth_reviews_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #app__page_auth .app__auth_reviews_block {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+
+/**
+
+  Registartion block styles
+
+**/
+.app__auth_register_block {
+  position: relative;
+  background-color: white!important;
+}
+#app__auth_register_logotype {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#app__auth_register_block_form {
+  height: 100%;
+  margin: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 300px;
+  width: fit-content;
+}
+
+#app__register_form_title {
+  text-align: center;
+}
+#app__register_form_title h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+#app__register_form_controls {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+#app__register_form_controls .app__register_form_control {
+  display: flex;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-top: .25em;
+  margin-bottom: .25em;
+}
+#app__register_form_controls .app__register_form_control:nth-child(5) {
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin-right: .5em!important;
+}
+#app__register_form_controls .app__register_form_control:nth-child(6) {
+  display: flex;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-left: .5em!important;
+}
+#app__auth_register_block_form .app__register_form_control label {
+  display: flex;
+  flex-direction: column;
+  gap: .25em;
+  text-align: start;
+  width: 100%;
+}
+#app__auth_register_block_form .app__register_form_control label span {
+  color: rgb(125, 125, 125);
+  font-size: clamp(10px, 12px, 14px);
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
+#app__auth_register_block_form .app__register_form_control label span a {
+  color: var(--font-color-blue);
+  text-decoration: none;
+}
+#app__auth_register_block_form .app__register_form_control label span a:hover {
+  text-decoration: underline;
+}
+#app__auth_register_block_form .app__register_form_control input[type=text],
+#app__auth_register_block_form .app__register_form_control input[type=email],
+#app__auth_register_block_form .app__register_form_control input[type=date],
+#app__auth_register_block_form .app__register_form_control input[type=password] {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  padding: 0.5em;
+  border: 1px solid rgba(125, 125, 125, 0.5);
+  border-radius: 4px;
+  outline: none;
+  appearance: none;
+}
+#app__auth_register_block_form .app__register_form_control input[type=text].filled,
+#app__auth_register_block_form .app__register_form_control input[type=email].filled,
+#app__auth_register_block_form .app__register_form_control input[type=date].filled,
+#app__auth_register_block_form .app__register_form_control input[type=password].filled {
+  background-color: rgb(102 198 233 / 25%);
+}
+#app__auth_register_block_form .app__register_form_control input[type=text]:focus,
+#app__auth_register_block_form .app__register_form_control input[type=email]:focus,
+#app__auth_register_block_form .app__register_form_control input[type=date]:focus,
+#app__auth_register_block_form .app__register_form_control input[type=password]:focus {
+  border: 2px solid rgb(100, 175, 255);
+  box-shadow: 0px 0px 4px rgba(100, 175, 255, 0.5);
+}
+#app__auth_register_block_form .app__register_form_control input[type=text].invalid,
+#app__auth_register_block_form .app__register_form_control input[type=email].invalid,
+#app__auth_register_block_form .app__register_form_control input[type=date].invalid,
+#app__auth_register_block_form .app__register_form_control input[type=password].invalid {
+  border: 2px solid red;
+}
+#app__auth_register_block_form #app__register_form_checkbox_control {
+  display: flex;
+  flex-direction: row;
+}
+#app__auth_register_block_form #app__register_form_checkbox_control label span {
+  margin: auto;
+  margin-left: 1em;
+}
+#app__auth_register_block_form #auth__form_submit button {
+  cursor: pointer;
+  padding: 0.75em;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--background-blue);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .1s ease-in-out;
+}
+#app__auth_register_block_form #auth__form_submit button:hover { 
+  background-color: var(--background-hover-blue);
+}
+#app__auth_register_block_form #auth__form_submit button:disabled {
+  cursor: auto;
+  background-color: rgba(108, 129, 131, 0.5);
+}
+
+/**
+
+  Reviews block styles
+
+**/
+
+.app__auth_reviews_block {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 25, 60);
+}
+#app__auth_reviews_block_content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+  #app__auth_reviews_block_content {
+  }
+}
+
+#app__reviews_block_title {
+  text-align: center;
+}
+#app__reviews_block_title h1 {
+  margin: .25em;
+  color: whitesmoke;
+  font-size: 22px;
+}
+#app__reviews_block_title p {
+  color: rgb(175, 175, 175);
+  font-size: 14px;
+}
+
+#app__reviews_block_cards {
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5em;
+}
+
+.app__reviews_block_card_block {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 125px;
+  width: calc(20%);
+  min-height: 175px;
+  height: fit-content;
+  background-color: whitesmoke;
+  border-radius: 6px;
+}
+#app__reviews_block_card_header {
+  text-align: start;
+}
+#app__reviews_block_card_header img {
+  width: 44px;
+}
+#app__reviews_block_card_content {
+  margin-top: 0;
+  margin-bottom: auto;
+  font-size: clamp(10px, 12px, 14px);
+}
+#app__reviews_block_card_footer {
+  font-size: 14px;
+  text-align: end;
+}
+
+#app__reviews_block_footer_title {
+  text-align: center;
+  font-weight: 600;
+}
+#app__reviews_block_footer_title p {
+  color: whitesmoke;
+  font-size: 14pxvh;
+}
+#app__reviews_block_footer_title p span {
+  color: var(--font-color-blue);
+}
+#app__reviews_block_footer_images {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+  #app__reviews_block_footer_images {
+    width: 75%;
+  }
+}
+
+#app__reviews_block_footer_images div {
+  height: 25px;
+  margin: .5em;
+}
+#app__reviews_block_footer_images img {
+  margin: auto;
+  height: 100%;
+}

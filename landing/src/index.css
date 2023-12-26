@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto Mono', monospace; */
+  z-index: 999;
+}
+
+:root {
+  --background-blue: #00c2ff;
+  --background-hover-blue: rgb(100, 200, 200);
+
+  --font-color-black: #001a38;
+  --font-color-blue: #00c2ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(195, 195, 195);
+  border-radius: 4px;
+}
+body::-webkit-scrollbar-track {
+  background-color: rgb(225, 225, 225);
+}
+
+/**
+
+  Global styles
+
+**/
+
+.container {
+  width: 90%; 
+  margin: auto;
+  padding: 0;
+}
+
+.container.sm {
+  width: 60%;
+}
+.container.md {
+  width: 70%;
+}
+.container.lg {
+  width: 80%;
+}
+.container.xl {
+  width: 90%;
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1244px) {
+  .container.sm {
+    width: 65%;
+  }
+  .container.md {
+    width: 75%;
+  }
+  .container.lg {
+    width: 85%;
+  }
+  .container.xl {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 686px) and (max-width: 1024px) {
+  .container.sm {
+    width: 75%;
+  }
+  .container.md {
+    width: 85%;
+  }
+  .container.lg {
+    width: 90%;
+  }
+  .container.xl {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 687px) {
+  .container.sm {
+    width: 95%;
+  }
+  .container.md {
+    width: 95%;
+  }
+  .container.lg {
+    width: 95%;
+  }
+  .container.xl {
+    width: 95%;
+  }
+}

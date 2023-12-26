@@ -1,0 +1,18 @@
+#logotype {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: .25em;
+  padding: 1em;
+  width: 125px;
+}
+#logotype img {
+  height: min(max(40px, 6vh), 40px);
+}
+#logotype h2 {
+  margin: auto;
+  color: var(--font-color-black);
+  font-size: clamp(18px, 20px, 22px);
+  font-weight: 400;
+}
