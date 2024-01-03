@@ -10,49 +10,49 @@ type ReviewType = {
 
 const reviewsItems: ReviewType[] = [
   {
-    avatar: '/img/avatar-adam-zentini.png',
+    avatar: '/assets/images/avatars/avatar-adam-zentini.png',
     name: 'Adam Zentini',
     date: 'Mar 6, 2021',
     title: 'Great! Product!',
     content: 'I went to Finance this year because a friend of mine recommended them. I was connected with a human who walked me right through everything. It is so nice knowing I won’t have to dread crypto taxes!.'
   },
   {
-    avatar: '/img/avatar-jay-man.png',
+    avatar: '/assets/images/avatars/avatar-jay-man.png',
     name: 'Jay',
     date: 'Dec 12, 2022',
     title: 'I tried couple of other Crypto tax...',
     content: 'I tried couple of other Crypto tax platforms and I cansurely say that Finance was the best. They help you all the way through the end before you have to pay anything at all. They have great featureslike intuitive UI, ease of use /UX, fast app performance and great customer service agents like Aimee, who helped through the process and also checked things in the backend before a paid single penny. Kudos to the team. I will be a return customer. PS: No, they did not give me any discounts to post this. :)'
   },
   {
-    avatar: '/img/avatar-jason-man.png',
+    avatar: '/assets/images/avatars/avatar-jason-man.png',
     name: 'Jason',
     date: 'Jun 15, 2021',
     title: 'I’m a noob to crypto - Love Finance',
     content: 'The customer service is insanely good. E-mails are typically answered within hours (sometimes faster) by folks that clearly understand crypto taxes and really seem to care. If only the exchanges were so good! Worth the $$$. Zero regret. '
   },
   {
-    avatar: '/img/avatar-robert-man.png',
+    avatar: '/assets/images/avatars/avatar-robert-man.png',
     name: 'Robert',
     date: 'Jun 15, 2021',
     title: 'Great Product!',
     content: 'Easier than I thought it would be! Just knowing next year will be just as easy is comforting.'
   },
   {
-    avatar: '/img/avatar-kirk-b-man.png',
+    avatar: '/assets/images/avatars/avatar-kirk-b-man.png',
     name: 'Kirk B',
     date: 'Sep 6, 2021',
     title: 'Best few $$ I ever spent',
     content: 'I dragged my feet for months in completing my taxes, but now it’s Sept and the dreaded tax deadline is looming. I found Finance and in 15 min I was done. Unreal! Thank You!'
   },
   {
-    avatar: '/img/avatar-michelle-d-woman.png',
+    avatar: '/assets/images/avatars/avatar-michelle-d-woman.png',
     name: 'Michelle D',
     date: 'Nov 25, 2021',
     title: 'Excellent product',
     content: 'Excellent product, excellent customer service — Jon helped me out back and forth multiple times over several days to help me solve a problem and answer questions about crypto taxes in general.'
   },
   {
-    avatar: '/img/avatar-reiko-rivera.png',
+    avatar: '/assets/images/avatars/avatar-reiko-rivera.png',
     name: 'Reiko Rivera',
     date: 'Mar 17, 2021',
     title: 'I can’t say enough good things',
@@ -93,7 +93,7 @@ export const ReviewsBlock = () => {
    */
   useEffect(() => {
 
-    window.onresize = evt => resizeCallback();
+    window.onresize = () => resizeCallback();
 
     resizeCallback();
   }, [resizeCallback])
@@ -184,11 +184,11 @@ export const ReviewsBlock = () => {
                     </div>
                     <div className="app__home_review_item_info">
                       <ul className="app__home_review_item_rate">
-                        <li><img src="/img/rate-star.svg" alt="" /></li>
-                        <li><img src="/img/rate-star.svg" alt="" /></li>
-                        <li><img src="/img/rate-star.svg" alt="" /></li>
-                        <li><img src="/img/rate-star.svg" alt="" /></li>
-                        <li><img src="/img/rate-star.svg" alt="" /></li>
+                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
                       </ul>
                       <div id="app__home_review_item_date">
                         <span>{item.date}</span>

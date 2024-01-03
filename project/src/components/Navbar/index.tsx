@@ -45,10 +45,9 @@ export const Navbar = () => {
               }
             }
           >
-            <Link value="Product" url='/' links={[]} />
-            <Link value="Integrations" url='/' />
-            <Link value="Learn" url='/' links={[]} />
-            <Link value="Pricing" url='/' />
+            <Link value="Product" url='#app__home_save_your_money' />
+            <Link value="Integrations" url='#app__home_platform_sliders' />
+            <Link value="Learn" url='#app__home_knowledge_block' />
           </div>
         </div>
 
@@ -82,10 +81,33 @@ export const Navbar = () => {
             <div id="app__header_mobile_navbar">
 
               <div id="app__header_mobile_navbar_list">
-                <div className='app__header_mobile_navbar_list_item item_menu'>Product</div>
-                <div className='app__header_mobile_navbar_list_item'>Integrations</div>
-                <div className='app__header_mobile_navbar_list_item item_menu'>Learn</div>
-                <div className='app__header_mobile_navbar_list_item'>Pricing</div>
+                <div
+                  className='app__header_mobile_navbar_list_item'
+                  onClick={() => {
+                    window.location.href = '#app__home_save_your_money';
+                    setMenuActive(false);
+                  }}
+                >
+                  Product
+                </div>
+                <div
+                  className='app__header_mobile_navbar_list_item'
+                  onClick={() => {
+                    window.location.href = '#app__home_platform_sliders';
+                    setMenuActive(false);
+                  }}
+                >
+                  Integrations
+                </div>
+                <div
+                  className='app__header_mobile_navbar_list_item'
+                  onClick={() => {
+                    window.location.href = '#app__home_knowledge_block';
+                    setMenuActive(false);
+                  }}
+                >
+                  Learn
+                </div>
               </div>
 
               <div id="app__header_mobile_navbar_authorizations">

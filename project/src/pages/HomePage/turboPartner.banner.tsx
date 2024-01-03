@@ -24,7 +24,7 @@ export const TurboPartnerBanner = () => {
         </div>
 
         <div id="app__home_turbo_partner_banner">
-          <img src="/img/banner_trusted_turbotax_partner.png" alt="" />
+          <img src="/assets/images/banners/banner_trusted_turbotax_partner.png" alt="" />
         </div>
 
       </div>

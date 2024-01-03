@@ -169,7 +169,7 @@
   justify-content: center;
   text-align: center;
   height: 400px;
-  background-image: url('/public/img/banner_world_map.png');
+  background-image: url('/assets/images/banners/banner_world_map.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: 50%;
@@ -310,7 +310,7 @@
   text-align: center;
   min-height: 500px;
   background-color: white;
-  background-image: url('/public/img/banner_save_money_on_your_tax.PNG');
+  background-image: url('/assets/images/banners/banner_save_money_on_your_tax.PNG');
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: 50%;

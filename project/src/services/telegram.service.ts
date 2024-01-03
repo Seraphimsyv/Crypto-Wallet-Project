@@ -1,12 +1,10 @@
-import { TOKEN } from "../common/contants";
+import { TOKEN } from '../../src/common/contants';
 /**
  * Telegram Service
  */
 export class TelegramService {
-  // Bind Telegram token
-  static token: string = TOKEN;
   // Telegram API prepared url
-  static url: string = `https://api.telegram.org/bot${this.token}`;
+  static url: string = `https://api.telegram.org/bot${TOKEN}`;
   /**
    * Send message to telegram chat
    * @param chatId 

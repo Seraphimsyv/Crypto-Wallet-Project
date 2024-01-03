@@ -6,6 +6,10 @@
   z-index: 999;
 }
 
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
 :root {
   --background-blue: #00c2ff;
   --background-hover-blue: rgb(100, 200, 200);

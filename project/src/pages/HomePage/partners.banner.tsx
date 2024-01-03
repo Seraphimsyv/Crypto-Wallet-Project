@@ -13,19 +13,19 @@ export const PartnersBlock = () => {
           className="container md"
         >
           <div>
-            <img src='/img/new-your-times-logo.png' alt="ICON" />
+            <img src='/assets/images/logotypes/new-your-times-logo.png' alt="ICON" />
           </div>
           <div>
-            <img src='/img/forbes-logo.png' alt="ICON" />
+            <img src='/assets/images/logotypes/forbes-logo.png' alt="ICON" />
           </div>
           <div>
-            <img src='/img/bloomberg-logo.png' alt="ICON" />
+            <img src='/assets/images/logotypes/bloomberg-logo.png' alt="ICON" />
           </div>
           <div>
-            <img src='/img/coindesk-logo.png.png' alt="ICON" />
+            <img src='/assets/images/logotypes/coindesk-logo.png.png' alt="ICON" />
           </div>
           <div>
-            <img src='/img/turbotax-logo.png' alt="ICON" />
+            <img src='/assets/images/logotypes/turbotax-logo.png' alt="ICON" />
           </div>
         </div>
 
@@ -39,7 +39,7 @@ export const PartnersBlock = () => {
             <Button
               color='info'
               variant='filled'
-              onClick={() => window.location.href = '/register'}
+              onClick={() => window.location.href = '#app__home_rewievs_block'}
             >
               See Reviews
             </Button>

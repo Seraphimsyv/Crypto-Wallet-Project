@@ -192,7 +192,7 @@ export const Footer = () => {
             <div
               id="app__footer_copyright"
             >
-              <span>© Copyright {new Date().getFullYear()} - Coin Ledger, Inc.</span>
+              <span>© Copyright {new Date().getFullYear()} - Finance, Inc.</span>
             </div>
 
             {/* Contact */}

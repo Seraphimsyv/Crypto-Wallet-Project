@@ -24,7 +24,7 @@ export const Header = () => {
     <>
       <div className="app__header_status_bar">
         <p>
-          🔥 Comming Soon: Portfolio tracking by Finance.
+          <span role='img' aria-label='' aria-labelledby=''>🔥</span> Comming Soon: Portfolio tracking by Finance.
           <a href='/'>Join the waitlist</a>
         </p>
       </div>

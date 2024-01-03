@@ -95,7 +95,7 @@ footer {
 }
 #app__footer_lang {
   background-color: transparent;
-  background-image: url('/public/img/lang/usa.png');
+  background-image: url('/assets/icons/system/language-usa.png');
   background-size: 22px 22px;
   background-repeat: no-repeat;
   background-position: 5% center;
@@ -109,11 +109,12 @@ footer {
   border: none;
   font-size: 16px;
   background-color: transparent;
-  background-image: url('/public/img/down-arrow.svg'); /* Путь к вашему изображению галочки */
+  background-image: url('/assets/icons/system/arrow-down.svg'); /* Путь к вашему изображению галочки */
   background-size: 12px 12px;
   background-repeat: no-repeat;
   background-position: 90% center; /* Позиция изображения справа по центру */
   color: white;
+  cursor: pointer;
 }
 
 

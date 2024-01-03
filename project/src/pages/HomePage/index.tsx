@@ -7,7 +7,7 @@ import { HowItWorksBanner } from "./howItWorks.banner";
 import { SaveMoneyBanner } from "./saveMoney.banner";
 import { EasilyImportBanner } from "./easilyImport.banner";
 import { ExportAndFileBanner } from "./exportAndFile.banner";
-import { InternationalBanner } from "./internation.banner";
+import { InternationalBanner } from "./international.banner";
 import { TurboPartnerBanner } from "./turboPartner.banner";
 import { PlatformSliders } from "./platform.sliders";
 import { KnowledgeBlock } from "./knowledge.block";

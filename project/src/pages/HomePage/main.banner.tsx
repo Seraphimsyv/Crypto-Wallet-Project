@@ -39,6 +39,7 @@ export const MainBanner = () => {
             <Button
               color='info'
               variant='filled'
+              onClick={() => window.location.href = '/register'}
             >
               Get Started For Free
             </Button>
@@ -55,7 +56,7 @@ export const MainBanner = () => {
           <div id="app__home_main_banner_content_link_watch">
             
             <div id="app__home_main_banner_content_link_icon">
-              <img src="/img/video-camera-icon.png" alt="ICON" />
+              <img src="/assets/icons/system/video-camera-icon.png" alt="ICON" />
             </div>
 
             <div id="app__home_main_banner_content_link_text">
@@ -69,7 +70,7 @@ export const MainBanner = () => {
         {/*  */}
         <div id="app__home_main_banner_gif">
 
-          <img src="/img/banner_main_animation.svg" alt="BANNER" />
+          <img src="/assets/images/banners/banner_main_animation.svg" alt="BANNER" />
 
         </div>
 

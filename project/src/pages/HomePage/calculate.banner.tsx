@@ -10,10 +10,10 @@ export const CalculateBanner = () => {
       >
         {/* Banners */}
         <div id="app__home_calculate_banner_left">
-          <img src="/img/banner.calculate-left.png" alt="" />
+          <img src="/assets/images/banners/banner.calculate-left.png" alt="" />
         </div>
         <div id="app__home_calculate_banner_right">
-          <img src="/img/banner.calculate-right.png" alt="" />
+          <img src="/assets/images/banners/banner.calculate-right.png" alt="" />
         </div>
         {/* Content */}
         <div id="app__home_calculate_banner_content">

@@ -9,7 +9,7 @@ export const EasilyImportBanner = () => {
         <div className="container lg">
 
           <div id="app__home_easily_import_banner">
-            <img src="/img/banner_import_historical_data.png" alt="" />
+            <img src="/assets/images/banners/banner_import_historical_data.png" alt="" />
           </div>
 
           <div id="app__home_easily_import_content">

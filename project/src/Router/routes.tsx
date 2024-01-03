@@ -6,7 +6,7 @@ import { SuccessPage } from '../pages/SuccessPage';
 
 type RouteType = {
   path: string;
-  element: React.ReactNode;
+  element: React.ReactNode | any;
 }
 
 export const routes: RouteType[] = [

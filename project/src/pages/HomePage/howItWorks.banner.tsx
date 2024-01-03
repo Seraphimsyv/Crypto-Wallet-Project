@@ -10,17 +10,17 @@ const selectionItems: SelectItemType[] = [
   {
     title: 'Import Transactions',
     content: 'Import your crypto transactions from your wallets and exchanges.',
-    img: '/img/selection-first.svg',
+    img: '/assets/icons/selection-first.svg',
   },
   {
     title: 'Preview Your Report',
     content: 'Watch the platform calculate your gains and losses for all your transactions — trading, staking, NFTs, or anything else!',
-    img: '/img/selection-second.svg'
+    img: '/assets/icons/selection-second.svg'
   },
   {
     title: 'Generate Your Tax Report',
     content: 'Once you view your transaction history, download your tax report with the click of a button.',
-    img: '/img/selection-three.svg'
+    img: '/assets/icons/selection-three.svg'
   }
 ];
 
@@ -80,7 +80,7 @@ export const HowItWorksBanner = () => {
 
             {/* Banner */}
             <div id="app__home_how_it_works_banner">
-              <img src="/img/banner_how_it_works.svg" alt="" />
+              <img src="/assets/images/banners/banner_how_it_works.svg" alt="" />
             </div>
 
         </div>

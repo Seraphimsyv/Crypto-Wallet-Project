@@ -105,7 +105,7 @@ const Slider: React.FC<ISliderProps> = (props) => {
             >
               <div className='app__home_platform_slider_item'>
                 <span id="icon">
-                  <img src={`/img/platforms/${item.img}`} alt="" />
+                  <img src={`/assets/images/platforms/${item.img}`} alt="" />
                 </span>
                 <span id="title">
                   {item.title}
@@ -120,7 +120,7 @@ const Slider: React.FC<ISliderProps> = (props) => {
             >
               <div className='app__home_platform_slider_item'>
                 <span id="icon">
-                  <img src={`/img/platforms/${item.img}`} alt="" />
+                  <img src={`/assets/images/platforms/${item.img}`} alt="" />
                 </span>
                 <span id="title">
                   {item.title}

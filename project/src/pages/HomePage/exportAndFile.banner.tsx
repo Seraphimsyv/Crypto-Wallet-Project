@@ -31,7 +31,7 @@ export const ExportAndFileBanner = () => {
         </div>
 
         <div id="app__home_export_and_file_banner">
-          <img src="/img/banner_export_and_file_base.png" alt="" />
+          <img src="/assets/images/banners/banner_export_and_file_base.png" alt="" />
         </div>
 
       </div>

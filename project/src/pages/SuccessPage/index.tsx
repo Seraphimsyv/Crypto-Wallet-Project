@@ -25,7 +25,7 @@ export const SuccessPage = () => {
 
           {/* Image */}
           <div id="app__success_block_logo">
-            <img src="/img/success-mail.png" alt="SUCCESS-MAIL" />
+            <img src="/assets/icons/system/success-mail.png" alt="SUCCESS-MAIL" />
           </div>
           
           {/* Title */}

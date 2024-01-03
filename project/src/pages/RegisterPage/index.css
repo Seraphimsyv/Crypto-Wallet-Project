@@ -32,7 +32,82 @@
     padding-bottom: 3em;
   }
 }
+/**
 
+  Recovery block
+
+**/
+#app__register_form_seed {
+  margin: auto;
+  width: 80%;
+}
+#app__register_form_seed #header {
+  text-align: center;
+}
+#app__register_form_seed #title {
+  font-size: 1.25rem;
+  font-family: "Euclid Circular B", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 140%;
+  margin: 0;
+}
+#app__register_form_seed #subtitle {
+  font-size: .8rem;
+  font-family: "Euclid Circular B", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 140%;
+  margin: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+#app__seed_length_select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media screen and (max-width: 500px) {
+  #app__seed_length_select {
+    flex-direction: column;
+    text-align: left;
+    gap: .5em;
+    margin: auto;
+  }
+}
+#app__seed_length_select label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+}
+#app__seed_length_select
+#app__seed_length_selection {
+  padding: .5em;
+  background: transparent;
+  border: 1px solid rgba(45, 45, 45, 0.5);
+  border-radius: 4px;
+}
+#app__seed_form_block {
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: calc(100% / 3 - 1em) calc(100% / 3 - 1em) calc(100% / 3 - 1em);
+  gap: 1.5em;
+}
+.app__seed_form_cell {
+  width: 100%;
+  display: flex;
+  gap: .5em
+}
+.app__seed_form_cell label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.app__seed_form_cell input {
+  width: inherit;
+}
+.app__seed_form_cell input.invalid {
+  border: 2px solid red;
+}
 /**
 
   Registartion block styles
@@ -50,7 +125,6 @@
 }
 
 #app__auth_register_block_form {
-  height: 100%;
   margin: auto;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -59,7 +133,7 @@
   justify-content: center;
   gap: 1em;
   min-width: 300px;
-  max-width: 300px;
+  max-width: 450px;
   min-height: 300px;
   width: fit-content;
 }
@@ -73,6 +147,8 @@
   font-weight: 500;
 }
 #app__register_form_controls {
+  margin: auto;
+  width: 80%;
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -149,12 +225,18 @@
   border: 2px solid red;
 }
 #app__auth_register_block_form #app__register_form_checkbox_control {
+  margin: auto;
+  width: 80%;
   display: flex;
   flex-direction: row;
 }
 #app__auth_register_block_form #app__register_form_checkbox_control label span {
   margin: auto;
   margin-left: 1em;
+}
+#app__auth_register_block_form #auth__form_submit{
+  margin: auto;
+  width: 80%;
 }
 #app__auth_register_block_form #auth__form_submit button {
   cursor: pointer;

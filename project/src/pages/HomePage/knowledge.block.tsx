@@ -12,19 +12,19 @@ const knowledgeItems: KnowledgeType[] = [
   {
     title: "The Ultimate Crypto Tax Guide (2023)",
     content: 'This guide breaks down everything you need to know about cryptocurrency taxes, from the high level tax implications to the actual crypto tax forms you need to fill out.',
-    img: '/img/knowledge_image_one.png',
+    img: '/assets/images/knowledge_image_one.png',
     url: 'Crypto taxes overview'
   },
   {
     title: 'Crypto Tax Rates 2023: Complete Breakdown',
     content: "Here’s how much tax you'll be paying on your income from Bitcoin, Ethereum, and other cryptocurrencies.",
-    img: '/img/knowledge_image_two.png',
+    img: '/assets/images/knowledge_image_two.png',
     url: 'Crypto tax rates'
   },
   {
     title: 'How Crypto Losses Can Reduce Your Taxes',
     content: 'Crypto and bitcoin losses need to be reported on your taxes. However, they can also save you money.',
-    img: '/img/knowledge_image_three.jpg',
+    img: '/assets/images/knowledge_image_three.jpg',
     url: 'How crypto losses lower your taxes'
   }
 ]
