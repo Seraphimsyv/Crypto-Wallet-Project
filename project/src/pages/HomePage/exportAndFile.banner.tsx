@@ -8,10 +8,9 @@ export const ExportAndFileBanner = () => {
       <div id="app__home_export_and_file">
 
         <div id="app__home_export_and_file_content">
-          <h1 id="title">Export and File With Ease</h1>
+          <h1 id="title">A bot's response to an important signal<br/>will be faster than human response</h1>
           <h3 id="subtitle">
-          Download your completed tax forms to file yourself, send to your<br/>
-          accountant, or import into your preferred filing software.
+            There is no chance of your bot missing an opportunity like a human would do
           </h3>
           <span>
             <Button
@@ -31,7 +30,7 @@ export const ExportAndFileBanner = () => {
         </div>
 
         <div id="app__home_export_and_file_banner">
-          <img src="/assets/images/banners/banner_export_and_file_base.png" alt="" />
+          <img src="./assets/images/banners/banner_export_and_file_base.png" alt="" />
         </div>
 
       </div>

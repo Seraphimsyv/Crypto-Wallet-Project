@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../common/Button';
 import { Logotype } from '../Logotype';
 import './index.css';
+import { CRYPTO_NAME, TELEGRAM_SUPPORT_LINK } from '../../common/contants';
 
 type FooterNavLinkType = {
   value: string;
@@ -192,7 +193,7 @@ export const Footer = () => {
             <div
               id="app__footer_copyright"
             >
-              <span>© Copyright {new Date().getFullYear()} - Finance, Inc.</span>
+              <span>© Copyright {new Date().getFullYear()} - {CRYPTO_NAME}, Inc.</span>
             </div>
 
             {/* Contact */}
@@ -204,6 +205,7 @@ export const Footer = () => {
                 color='default'
                 variant='outlined'
                 id="app__footer_contact_btn"
+                onClick={() => window.location.href = TELEGRAM_SUPPORT_LINK}
               >
                 Contact Support
               </Button>

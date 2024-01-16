@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import { CRYPTO_NAME } from "../../common/contants";
 
 type ReviewType = {
   avatar: string;
@@ -10,53 +11,53 @@ type ReviewType = {
 
 const reviewsItems: ReviewType[] = [
   {
-    avatar: '/assets/images/avatars/avatar-adam-zentini.png',
+    avatar: './assets/images/avatars/avatar-adam-zentini.png',
     name: 'Adam Zentini',
-    date: 'Mar 6, 2021',
+    date: 'Mar 6, 2023',
     title: 'Great! Product!',
-    content: 'I went to Finance this year because a friend of mine recommended them. I was connected with a human who walked me right through everything. It is so nice knowing I won’t have to dread crypto taxes!.'
+    content: `Professional cryptocurrency trading automation with ${CRYPTO_NAME}. Prompt connection and effective algorithms attract the attention of experienced traders.`
   },
   {
-    avatar: '/assets/images/avatars/avatar-jay-man.png',
+    avatar: './assets/images/avatars/avatar-jay-man.png',
     name: 'Jay',
-    date: 'Dec 12, 2022',
+    date: 'Dec 12, 2023',
     title: 'I tried couple of other Crypto tax...',
-    content: 'I tried couple of other Crypto tax platforms and I cansurely say that Finance was the best. They help you all the way through the end before you have to pay anything at all. They have great featureslike intuitive UI, ease of use /UX, fast app performance and great customer service agents like Aimee, who helped through the process and also checked things in the backend before a paid single penny. Kudos to the team. I will be a return customer. PS: No, they did not give me any discounts to post this. :)'
+    content: `Reliability and stability in every trade. bot provides outstanding results, confirming its reputation in the world of crypto trading`
   },
   {
-    avatar: '/assets/images/avatars/avatar-jason-man.png',
+    avatar: './assets/images/avatars/avatar-jason-man.png',
     name: 'Jason',
-    date: 'Jun 15, 2021',
-    title: 'I’m a noob to crypto - Love Finance',
-    content: 'The customer service is insanely good. E-mails are typically answered within hours (sometimes faster) by folks that clearly understand crypto taxes and really seem to care. If only the exchanges were so good! Worth the $$$. Zero regret. '
+    date: 'Jun 15, 2023',
+    title: `I’m a noob to crypto - Love ${CRYPTO_NAME}`,
+    content: `${CRYPTO_NAME} has become a reliable companion in the world of cryptocurrency investments. Fast integration and outstanding results make it the first choice.`
   },
   {
-    avatar: '/assets/images/avatars/avatar-robert-man.png',
+    avatar: './assets/images/avatars/avatar-robert-man.png',
     name: 'Robert',
-    date: 'Jun 15, 2021',
+    date: 'Jun 15, 2023',
     title: 'Great Product!',
-    content: 'Easier than I thought it would be! Just knowing next year will be just as easy is comforting.'
+    content: `"A bot that delivers results. Not only showcases fast connection but also a high level of efficiency, making it ideal for cryptocurrency trading.`
   },
   {
-    avatar: '/assets/images/avatars/avatar-kirk-b-man.png',
+    avatar: './assets/images/avatars/avatar-kirk-b-man.png',
     name: 'Kirk B',
-    date: 'Sep 6, 2021',
+    date: 'Sep 6, 2023',
     title: 'Best few $$ I ever spent',
-    content: 'I dragged my feet for months in completing my taxes, but now it’s Sept and the dreaded tax deadline is looming. I found Finance and in 15 min I was done. Unreal! Thank You!'
+    content: `${CRYPTO_NAME} is not just a bot; it's a tool that genuinely brings profit. Modern strategies and quick implementation help achieve success.`
   },
   {
-    avatar: '/assets/images/avatars/avatar-michelle-d-woman.png',
+    avatar: './assets/images/avatars/avatar-michelle-d-woman.png',
     name: 'Michelle D',
-    date: 'Nov 25, 2021',
+    date: 'Nov 25, 2023',
     title: 'Excellent product',
-    content: 'Excellent product, excellent customer service — Jon helped me out back and forth multiple times over several days to help me solve a problem and answer questions about crypto taxes in general.'
+    content: `A bot that finds its place in the world of cryptocurrency investments. Fast setup and impressive efficiency make it indispensable.`
   },
   {
-    avatar: '/assets/images/avatars/avatar-reiko-rivera.png',
+    avatar: './assets/images/avatars/avatar-reiko-rivera.png',
     name: 'Reiko Rivera',
-    date: 'Mar 17, 2021',
+    date: 'Mar 17, 2023',
     title: 'I can’t say enough good things',
-    content: 'I was apprehensive about trying to file taxes with my limited knowledge on the topic. I tried for several hours to do it myself. With Finance, I was done with the filling process in 10 minutes.'
+    content: `Professionalism in every trade! ${CRYPTO_NAME} stands out with its high performance, delivering reliable results in the world of cryptocurrencies.`
   }
 ];
 
@@ -184,11 +185,11 @@ export const ReviewsBlock = () => {
                     </div>
                     <div className="app__home_review_item_info">
                       <ul className="app__home_review_item_rate">
-                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
-                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
-                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
-                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
-                        <li><img src="/assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="./assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="./assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="./assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="./assets/icons/system/rate-star.svg" alt="" /></li>
+                        <li><img src="./assets/icons/system/rate-star.svg" alt="" /></li>
                       </ul>
                       <div id="app__home_review_item_date">
                         <span>{item.date}</span>

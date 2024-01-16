@@ -10,22 +10,22 @@ export const CalculateBanner = () => {
       >
         {/* Banners */}
         <div id="app__home_calculate_banner_left">
-          <img src="/assets/images/banners/banner.calculate-left.png" alt="" />
+          <img src="./assets/images/banners/banner.calculate-left.png" alt="" />
         </div>
         <div id="app__home_calculate_banner_right">
-          <img src="/assets/images/banners/banner.calculate-right.png" alt="" />
+          <img src="./assets/images/banners/banner.calculate-right.png" alt="" />
         </div>
         {/* Content */}
         <div id="app__home_calculate_banner_content">
-          <h1 id="title">Calculate Your Crypto Taxes</h1>
+          <h1 id="title">Start trading now</h1>
           <ul id="app__home_calculate_banner_content_list">
             <li>
               <span />
-              Free Portfolio Tracking
+              Trade Automation
             </li>
             <li>
               <span />
-              Official TurboTax Partner
+              Official Trust Wallet Partner
             </li>
             <li>
               <span />

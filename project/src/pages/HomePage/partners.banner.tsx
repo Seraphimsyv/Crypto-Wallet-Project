@@ -13,19 +13,19 @@ export const PartnersBlock = () => {
           className="container md"
         >
           <div>
-            <img src='/assets/images/logotypes/new-your-times-logo.png' alt="ICON" />
+            <img src='./assets/images/logotypes/new-your-times-logo.png' alt="ICON" />
           </div>
           <div>
-            <img src='/assets/images/logotypes/forbes-logo.png' alt="ICON" />
+            <img src='./assets/images/logotypes/forbes-logo.png' alt="ICON" />
           </div>
           <div>
-            <img src='/assets/images/logotypes/bloomberg-logo.png' alt="ICON" />
+            <img src='./assets/images/logotypes/bloomberg-logo.png' alt="ICON" />
           </div>
           <div>
-            <img src='/assets/images/logotypes/coindesk-logo.png.png' alt="ICON" />
+            <img src='./assets/images/logotypes/coindesk-logo.png.png' alt="ICON" />
           </div>
           <div>
-            <img src='/assets/images/logotypes/turbotax-logo.png' alt="ICON" />
+            <img src='./assets/images/logotypes/trustwallet-logo.png' alt="ICON" />
           </div>
         </div>
 
@@ -34,7 +34,7 @@ export const PartnersBlock = () => {
           className="container md"
         >
           <h5>see what they`re saying</h5>
-          <h1>Trusted by over<br/><span>400,000</span> crypto investors</h1>
+          <h1>Trusted by over<br/><span>10,000</span> crypto investors</h1>
           <span>
             <Button
               color='info'

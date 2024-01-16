@@ -276,11 +276,6 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 1024px) {
-  #app__auth_reviews_block_content {
-  }
-}
-
 #app__reviews_block_title {
   text-align: center;
 }
@@ -366,4 +361,5 @@
 #app__reviews_block_footer_images img {
   margin: auto;
   height: 100%;
+  filter: contrast(0);
 }

@@ -1,2 +1,5 @@
-export const TOKEN = "6580821933:AAEX5ylBsK_LlbffHPcjan52Jmwt3YFpiBs"; 
-export const CRYPTO_NAME = "Finance";
+export const TOKEN = ""; 
+export const CRYPTO_NAME = "FinanceLegalTrade";
+export const TELEGRAM_CHANNEL_LINK = "https://t.me/FinanceLegalTrade";
+export const TELEGRAM_SUPPORT_LINK = "https://t.me/FinanceLegalTrade1Support";
+export const VIDEO_LINK = "";

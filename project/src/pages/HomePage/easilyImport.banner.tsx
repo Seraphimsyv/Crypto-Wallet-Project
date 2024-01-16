@@ -9,17 +9,17 @@ export const EasilyImportBanner = () => {
         <div className="container lg">
 
           <div id="app__home_easily_import_banner">
-            <img src="/assets/images/banners/banner_import_historical_data.png" alt="" />
+            <img src="./assets/images/banners/banner_import_historical_data.png" alt="" />
           </div>
 
           <div id="app__home_easily_import_content">
             <h1 id="title">
-              Easily Import Historical Data
+              What is a cryptocurrency trading bot?
             </h1>
             <h3 id="subtitle">
-              Finance integrates directly with your favorite platforms to make it easy to import your historical transactions.
-              Whether you’re trading, earning interest,
-              or buying NFTs you’ll be able import your transactions and calculate your taxes with ease.
+              A bot for cryptocurrency trading is a computer program that buys and sells digital assets,
+              either by the algorithm of the program itself, or with the participation of the trader.
+              All bots at their core use various kinds of signals, algorithms, patterns, templates and trader's settings
             </h3>
 
             <span>

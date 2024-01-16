@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Navbar } from '../Navbar';
+import {  TELEGRAM_CHANNEL_LINK } from '../../common/contants';
 import './index.css';
 
 export const Header = () => {
@@ -24,8 +25,8 @@ export const Header = () => {
     <>
       <div className="app__header_status_bar">
         <p>
-          <span role='img' aria-label='' aria-labelledby=''>🔥</span> Comming Soon: Portfolio tracking by Finance.
-          <a href='/'>Join the waitlist</a>
+          <span role='img' aria-label='' aria-labelledby=''>🔥</span> Join our telegram channel and keep up with the latest news.
+          <a href={TELEGRAM_CHANNEL_LINK}>Join the waitlist</a>
         </p>
       </div>
 

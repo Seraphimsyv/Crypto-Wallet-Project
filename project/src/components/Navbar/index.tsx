@@ -25,6 +25,10 @@ export const Navbar = () => {
       window.document.body.style.overflow = 'auto';
     }
 
+    window.onresize = evt => {
+      window.innerWidth >= 1024 && menuActive && setMenuActive(false)
+    }
+
   }, [menuActive])
 
   return (

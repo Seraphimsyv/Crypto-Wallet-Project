@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from "../../components/common/Button";
 
 type KnowledgeType = {
   title: string;
@@ -10,21 +9,21 @@ type KnowledgeType = {
 
 const knowledgeItems: KnowledgeType[] = [
   {
-    title: "The Ultimate Crypto Tax Guide (2023)",
-    content: 'This guide breaks down everything you need to know about cryptocurrency taxes, from the high level tax implications to the actual crypto tax forms you need to fill out.',
-    img: '/assets/images/knowledge_image_one.png',
+    title: "Trust the experience of others",
+    content: `Our Trading Bot doesn't just automate trading, it also creates success stories. Join a team where every trade is a step towards financial prosperity! Testimonials speak for themselves: thanks to our team, we have achieved - a reliable tool for happy and successful traders. Join the ranks of satisfied customers!`,
+    img: './assets/images/knowledge_image_one.png',
     url: 'Crypto taxes overview'
   },
   {
-    title: 'Crypto Tax Rates 2023: Complete Breakdown',
-    content: "Here’s how much tax you'll be paying on your income from Bitcoin, Ethereum, and other cryptocurrencies.",
-    img: '/assets/images/knowledge_image_two.png',
+    title: 'Cryptoinvesting',
+    content: `Cryptoinvesting is a form of investing in which investors purchase cryptocurrencies such as Bitcoin, Efirium and others with the hope of their future growth in value. It is a way to diversify your portfolio and participate in the rapidly evolving world of digital assets.`,
+    img: './assets/images/knowledge_image_two.png',
     url: 'Crypto tax rates'
   },
   {
-    title: 'How Crypto Losses Can Reduce Your Taxes',
-    content: 'Crypto and bitcoin losses need to be reported on your taxes. However, they can also save you money.',
-    img: '/assets/images/knowledge_image_three.jpg',
+    title: 'Integrate the Trading Bot easily and hassle-free',
+    content: `Compatibility with popular exchanges, easy customization and automatic strategy updates - your way to perfect trading! API for various platforms, support for major crypto exchanges, and the ability to customize to your needs. Manage your trades with ease and efficiency.`,
+    img: './assets/images/knowledge_image_three.jpg',
     url: 'How crypto losses lower your taxes'
   }
 ]
@@ -35,7 +34,7 @@ export const KnowledgeBlock = () => {
       <div id="app__home_knowledge_block" className="container lg">
 
         <h3 id="subtitle">knowledge base</h3>
-        <h1 id="title">Demystify Crypto Taxes</h1>
+        <h1 id="title">Trust the experience of others</h1>
 
         <div id="app__home_knowledge_items">
 
@@ -50,7 +49,7 @@ export const KnowledgeBlock = () => {
                 <p id="content">{item.content}</p>
               </div>
 
-              <Button
+              {/** <Button
                 size="sm"
                 color='info'
                 variant='text'
@@ -62,6 +61,7 @@ export const KnowledgeBlock = () => {
                   </svg>
                 </div>
               </Button>
+              */}
 
             </div>
           ))}

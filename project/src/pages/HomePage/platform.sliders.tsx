@@ -32,7 +32,7 @@ const platformItems: PlatformType[] = [
   { img: 'Cobo Wallet.png', title: 'Cobo Wallet' },
   { img: 'Coinbase.svg', title: 'Coinbase' },
   { img: 'Coinfloor.png', title: 'Coinfloor' },
-  { img: 'CoinOne.png', title: 'CoinOne' },
+  { img: 'Coinone.png', title: 'CoinOne' },
   { img: 'CoinSpot.png', title: 'CoinSpot' },
   { img: 'CryptalDash Wallet.png', title: 'CryptalDash Wallet' },
   { img: 'EasyCrypto.webp', title: 'EasyCrypto' },
@@ -51,7 +51,7 @@ const platformItems: PlatformType[] = [
   { img: 'Huobi Global.png', title: 'Huobi Global'},
   { img: 'Huobi Japan.png', title: 'Huobi Japan'},
   { img: 'JustSwap.png', title: 'JustSwap'},
-  { img: 'KeyStone Wallet.png', title: 'KeyStone Wallet'},
+  { img: 'Keystone Wallet.png', title: 'KeyStone Wallet'},
   { img: 'Kraken.png', title: 'Kraken'},
   { img: 'KuCoin.png', title: 'KuCoin'},
   { img: 'Lace Wallet.png', title: 'Lace Wallet'},
@@ -105,7 +105,7 @@ const Slider: React.FC<ISliderProps> = (props) => {
             >
               <div className='app__home_platform_slider_item'>
                 <span id="icon">
-                  <img src={`/assets/images/platforms/${item.img}`} alt="" />
+                  <img src={`./assets/images/platforms/${item.img}`} alt="" />
                 </span>
                 <span id="title">
                   {item.title}
@@ -120,7 +120,7 @@ const Slider: React.FC<ISliderProps> = (props) => {
             >
               <div className='app__home_platform_slider_item'>
                 <span id="icon">
-                  <img src={`/assets/images/platforms/${item.img}`} alt="" />
+                  <img src={`./assets/images/platforms/${item.img}`} alt="" />
                 </span>
                 <span id="title">
                   {item.title}
@@ -147,6 +147,7 @@ export const PlatformSliders = () => {
               size="md"
               variant='filled'
               color='info'
+              onClick={() => window.location.href = "/register"}
             >
               View All Integrations
             </Button>

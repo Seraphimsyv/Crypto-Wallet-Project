@@ -25,14 +25,14 @@ export const SuccessPage = () => {
 
           {/* Image */}
           <div id="app__success_block_logo">
-            <img src="/assets/icons/system/success-mail.png" alt="SUCCESS-MAIL" />
+            <img src="./assets/icons/system/success-mail.png" alt="SUCCESS-MAIL" />
           </div>
           
           {/* Title */}
           <h1>The trading bot has been successfully connected!</h1>
 
           {/* Subtitle */}
-          <h3>Wait for an e-mail message to «<a href={`mailto:${email}`}>{email}</a>»</h3>
+          {/* <h3>Wait for an e-mail message to «<a href={`mailto:${email}`}>{email}</a>»</h3> */}
 
           {/* Button */}
           <button onClick={() => window.location.href = '/'}>Home Page</button>

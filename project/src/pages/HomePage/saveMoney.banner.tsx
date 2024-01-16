@@ -7,13 +7,11 @@ export const SaveMoneyBanner = () => {
       <div id="app__home_save_your_money" className="container lg">
 
         <h1 id="title">
-          Save Money On Your Tax<br/>
-          Bill With Crypto Losses
+          Running a bot is a good way to increase your balance without requiring constant involvement on your part.
         </h1>
 
         <p id="subtitle">
-          Writing off crypto losses can help you save thousands.<br/>
-          Claim your tax-savings today with Finance!
+          Connect the trading bot together with our team and your returns on your cryptocurrency investments will skyrocket
         </p>
 
         <span>

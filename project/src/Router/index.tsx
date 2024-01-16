@@ -1,18 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { routes } from './routes';
+import { HomePage } from '../pages/HomePage';
+import { RegisterPage } from '../pages/RegisterPage';
+import { SuccessPage } from '../pages/SuccessPage';
 
 export const Router = () => {
 
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          {routes.map(({ path, element }, key) => (
-            <Route key={key} path={path} element={element} />
-          ))}
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+  if (window.location.pathname === '/register')
+    return <RegisterPage />
+
+  else if (window.location.pathname === '/success')
+    return <SuccessPage />
+
+  return <HomePage />
 }

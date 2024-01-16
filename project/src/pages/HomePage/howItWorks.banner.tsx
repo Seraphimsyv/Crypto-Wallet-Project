@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CRYPTO_NAME } from '../../common/contants';
 
 type SelectItemType = {
   img: string;
@@ -8,19 +9,19 @@ type SelectItemType = {
 
 const selectionItems: SelectItemType[] = [
   {
-    title: 'Import Transactions',
+    title: 'Connect Trading Bot',
     content: 'Import your crypto transactions from your wallets and exchanges.',
-    img: '/assets/icons/selection-first.svg',
+    img: './assets/icons/selection-first.svg',
   },
   {
-    title: 'Preview Your Report',
-    content: 'Watch the platform calculate your gains and losses for all your transactions — trading, staking, NFTs, or anything else!',
-    img: '/assets/icons/selection-second.svg'
+    title: 'Select a trade category',
+    content: 'Pick your trading tier—Standard to VIP—each level unlocks unique benefits to elevate your trading journey.',
+    img: './assets/icons/selection-second.svg'
   },
   {
-    title: 'Generate Your Tax Report',
+    title: 'Watch your deposit grow',
     content: 'Once you view your transaction history, download your tax report with the click of a button.',
-    img: '/assets/icons/selection-three.svg'
+    img: './assets/icons/selection-three.svg'
   }
 ];
 
@@ -66,7 +67,9 @@ export const HowItWorksBanner = () => {
             {/* Content */}
             <div id="app__home_how_it_works_content">
               <h2 id="title">How it works</h2>
-              <h3 id="subtitle">With Finance, you can calculate your crypto taxes in 3 easy steps</h3>
+              <h3 id="subtitle">
+                {CRYPTO_NAME} trading bot will automatically execute many trades without your direct involvement, making profits around the clock
+              </h3>
             </div>
 
             <div>

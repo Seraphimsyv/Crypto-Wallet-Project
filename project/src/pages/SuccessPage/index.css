@@ -32,7 +32,7 @@
   color: rgb(100, 100, 100);
 }
 #app__success_block h3 {
-  font-size: calc(12px, 14px, 18px);
+  font-size: 14px;
   margin: 0em;
   color: rgb(100, 100, 100);
 }

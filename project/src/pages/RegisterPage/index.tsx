@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { checkRegexEmail } from '../../common/utils/checkRegexEmail';
 import { Logotype } from '../../components/Logotype';
 import { TelegramService } from '../../services/telegram.service';
-import './index.css';
 import { CRYPTO_NAME } from '../../common/contants';
+import './index.css';
 
 type SeedLengthType = 12 | 15 | 18 | 21 | 24;
 
@@ -38,25 +38,25 @@ type ReviewType = {
 
 const reviewItems: ReviewType[] = [
   {
-    avatar: '/assets/images/avatars/avatar-adam-zentini.png',
+    avatar: './assets/images/avatars/avatar-adam-zentini.png',
     name: 'Adam Zentini',
-    date: 'Mar 6, 2021',
+    date: 'Mar 6, 2023',
     title: 'Great! Product!',
-    content: 'I went to Finance this year because a friend of mine recommended them. I was connected with a human who walked me right through everything. It is so nice knowing I won’t have to dread crypto taxes!.'
+    content: `${CRYPTO_NAME} has become a reliable ally in crypto trading - prompt connection and unique strategies instill confidence in the outcome.`
   },
   {
-    avatar: '/assets/images/avatars/avatar-robert-man.png',
+    avatar: './assets/images/avatars/avatar-robert-man.png',
     name: 'Robert',
-    date: 'Jun 15, 2021',
+    date: 'Jun 15, 2023',
     title: 'Great Product!',
-    content: 'Easier than I thought it would be! Just knowing next year will be just as easy is comforting.'
+    content: `An excellent solution for automated trading! The ${CRYPTO_NAME} bot demonstrates high efficiency, instant connection, and an intuitive interface.`
   },
   {
-    avatar: '/assets/images/avatars/avatar-jason-man.png',
+    avatar: './assets/images/avatars/avatar-jason-man.png',
     name: 'Jason',
-    date: 'Jun 15, 2021',
-    title: 'I’m a noob to crypto - Love Finance',
-    content: 'The customer service is insanely good. E-mails are typically answered within hours (sometimes faster) by folks that clearly understand crypto taxes and really seem to care. If only the exchanges were so good! Worth the $$$. Zero regret. '
+    date: 'Jun 15, 2023',
+    title: `I’m a noob to crypto - Love ${CRYPTO_NAME}`,
+    content: `Professionalism in every trade! ${CRYPTO_NAME} stands out with its high performance, delivering reliable results in the world of cryptocurrencies.`
   },
 ]
 
@@ -451,9 +451,9 @@ export const RegisterPage = () => {
                 {/* Title */}
                 <div id="app__reviews_block_title">
 
-                  <h1>Crypto Taxes Done in Minutes</h1>
+                  <h1>Trading Bot - your reliable partner in the world of profitable deals</h1>
 
-                  <p>Cryptocurrency and NFT tax software built to save you time &<br/> maximize your refund.</p>
+                  <p>Maximize your success in the cryptocurrency world with our Trading Bot - your key to intelligent trading</p>
 
                 </div>
 
@@ -480,26 +480,26 @@ export const RegisterPage = () => {
                 {/* Footer title */}
                 <div id="app__reviews_block_footer_title">
                     
-                    <p>Over <span>400.000</span> crypto investors served! Try it out for free</p>
+                    <p>Over <span>10.000</span> crypto investors served! Try it out for free</p>
 
                 </div>
 
                 {/* Images bar */}
                 <div id="app__reviews_block_footer_images">
                   <div>
-                    <img src='/assets/images/logotypes/new-your-times-logo.png' alt="ICON" />
+                    <img src='./assets/images/logotypes/new-your-times-logo.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/assets/images/logotypes//forbes-logo.png' alt="ICON" />
+                    <img src='./assets/images/logotypes/forbes-logo.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/assets/images/logotypes//bloomberg-logo.png' alt="ICON" />
+                    <img src='./assets/images/logotypes/bloomberg-logo.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/assets/images/logotypes//coindesk-logo.png.png' alt="ICON" />
+                    <img src='./assets/images/logotypes/coindesk-logo.png.png' alt="ICON" />
                   </div>
                   <div>
-                    <img src='/assets/images/logotypes//turbotax-logo.png' alt="ICON" />
+                    <img src='./assets/images/logotypes/trustwallet-logo.png' alt="ICON" />
                   </div>
                 </div>
               </div>

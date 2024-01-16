@@ -16,6 +16,11 @@
   min-height: 75vh;
   background-color: #f1faff;
 }
+#app__home_main_banner_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 #app__home_main_banner_content,
 #app__home_main_banner_gif {
   padding: 1em;
@@ -23,14 +28,14 @@
 #app__home_main_banner_content_title {
   margin-bottom: 0;
   color: var(--font-color-black);
-  font-size: 6vh;
+  font-size: 2em;
   font-weight: 400;
 }
 #app__home_main_banner_content_subtitle {
   margin-top: 1em;
   margin-bottom: 2em;
   color: rgb(90, 90, 90);
-  font-size: clamp(12px, 14px, 18px);
+  font-size: 14px;
 }
 #app__home_main_banner_content_list {
   padding-left: 0em;
@@ -39,6 +44,7 @@
 #app__home_main_banner_content_list li {
   margin-top: 1em;
   margin-bottom: 1em;
+  font-size: 1em;
   padding-left: 0em;
   display: flex;
   flex-direction: row;
@@ -49,7 +55,7 @@
 #app__home_main_banner_content_list li span {
   position: relative;
   height: 18px;
-  width: 18px;
+  width: 24px;
   border-radius: 100%;
   background-color: lightgreen;
 }
@@ -169,7 +175,7 @@
   justify-content: center;
   text-align: center;
   height: 400px;
-  background-image: url('/assets/images/banners/banner_world_map.png');
+  background-image: url(/assets/images/banners/banner_world_map.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: 50%;
@@ -316,10 +322,15 @@
   background-position-x: 50%;
   color: var(--font-color-black);
 }
+@media screen and (min-width: 900px) {
+  #app__home_save_your_money {
+    background-size: cover;
+  }
+}
 #app__home_save_your_money #title {
   color: #001a38;
   font-family: Inter,sans-serif;
-  font-size: 42px;
+  font-size: 1.75em;
   font-weight: 500;
   line-height: 54.6px;
   margin: 0;
@@ -327,7 +338,7 @@
 }
 #app__home_save_your_money #subtitle {
   margin-bottom: 40px;
-  font-size: 18px;
+  font-size: 1.25em;
   line-height: 1.8;
 }
 #app__home_save_your_money #app__common_btn {
@@ -336,12 +347,22 @@
 }
 @media screen and (max-width: 768px) {
   #app__home_save_your_money {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin: auto;
     margin-top: 5em;
     margin-bottom: 5em;
+    width: 90%;
     min-height: 250px;
-    background-size: contain;
-    background-position-y: 50%;
-    background-position-x: 50%;
+    background-size: 125% 100%;
+  }
+  #app__home_save_your_money #title {
+    font-size: 1.55em;
+    line-height: 35px;
+  }
+  #app__home_save_your_money #subtitle {
+    margin-top: 1em;
+    font-size: 1.2em;
   }
 }
 /**
@@ -360,6 +381,11 @@
   grid-template-columns: calc(50% - 1em) calc(50% - 1em);
   gap: 1em;
 }
+#app__home_easily_import_banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 #app__home_easily_import_banner img {
   width: 100%;
 }
@@ -375,7 +401,7 @@
   font-weight: 500;
   line-height: 54.6px;
   margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
 }
 #app__home_easily_import_content #subtitle {
   margin-bottom: 40px;
@@ -421,7 +447,7 @@
   margin-bottom: 1em;
 }
 #app__home_export_and_file_content #subtitle {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.8;
@@ -511,9 +537,9 @@
   }
   #app__home_turbo_partner_banner {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, -15%);
     top: 20%;
-    left: 85%;
+    left: 0%;
     width: 100%;
     height: 100%;
     z-index: 998;
@@ -522,8 +548,10 @@
     justify-content: center;
   }
   #app__home_turbo_partner_banner img {
-    width: 35%;
-    margin: auto;
+    height: 35%;
+    width: auto;
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 /**
@@ -580,9 +608,9 @@
   #app__home_internation_banner {
     z-index: 998;
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, -50%);
     top: 50%;
-    left: 15%;
+    left: 0%;
     width: 100%;
     height: 100%;
     margin: auto;
@@ -591,7 +619,10 @@
     justify-content: center;
   }
   #app__home_internation_banner img {
-    width: 25%;
+    margin-left: 0;
+    margin-right: auto;
+    height: 25%;
+    width: auto;
   }
 }
 /**

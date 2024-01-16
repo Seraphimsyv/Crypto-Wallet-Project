@@ -8,7 +8,7 @@ import { SaveMoneyBanner } from "./saveMoney.banner";
 import { EasilyImportBanner } from "./easilyImport.banner";
 import { ExportAndFileBanner } from "./exportAndFile.banner";
 import { InternationalBanner } from "./international.banner";
-import { TurboPartnerBanner } from "./turboPartner.banner";
+import { TrustPartnerBanner } from "./trustPartner.banner";
 import { PlatformSliders } from "./platform.sliders";
 import { KnowledgeBlock } from "./knowledge.block";
 import { ReviewsBlock } from "./reviews.block";
@@ -37,7 +37,7 @@ export const HomePage = () => {
 
         <ExportAndFileBanner />
 
-        <TurboPartnerBanner />
+        <TrustPartnerBanner />
 
         <InternationalBanner />
 

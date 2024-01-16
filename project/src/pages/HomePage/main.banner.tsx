@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from "../../components/common/Button";
+import { CRYPTO_NAME, VIDEO_LINK } from '../../common/contants';
 
 export const MainBanner = () => {
   return (
@@ -11,26 +12,25 @@ export const MainBanner = () => {
         <div id="app__home_main_banner_content">
 
           <h1 id="app__home_main_banner_content_title">
-            Crypto Taxes Done in Minutes
+            Trading Bot {CRYPTO_NAME}
           </h1>
 
           <p id="app__home_main_banner_content_subtitle">
-            Cryptocurrency and NFT tax software built<br/>
-            to save you time & maximize your refund
+            Your reliable partner in the world of lucrative deals
           </p>
 
           <ul id="app__home_main_banner_content_list">
             <li>
               <span />
-              Free Portfolio Tracking
+              Fast, smart, profitable – it's designed for your success
             </li>
             <li>
               <span />
-              Official TurboTax Partner
+              Automation that turns every trade into a victory
             </li>
             <li>
               <span />
-              International Support
+              Our trading bot is the key to your intelligent trading
             </li>
           </ul>
 
@@ -41,36 +41,32 @@ export const MainBanner = () => {
               variant='filled'
               onClick={() => window.location.href = '/register'}
             >
-              Get Started For Free
-            </Button>
-
-            <Button
-              color='default'
-              variant='outlined'
-            >
-              See Example Report
+              Connect Trading Bot right now
             </Button>
 
           </div>
 
-          <div id="app__home_main_banner_content_link_watch">
+          {/* <div
+            id="app__home_main_banner_content_link_watch"
+            onClick={() => window.location.href = VIDEO_LINK}
+          >
             
             <div id="app__home_main_banner_content_link_icon">
-              <img src="/assets/icons/system/video-camera-icon.png" alt="ICON" />
+              <img src="./assets/icons/system/video-camera-icon.png" alt="ICON" />
             </div>
 
             <div id="app__home_main_banner_content_link_text">
               <span>Or Watch how it workds</span>
             </div>
 
-          </div>
+          </div> */}
 
         </div>
 
         {/*  */}
         <div id="app__home_main_banner_gif">
 
-          <img src="/assets/images/banners/banner_main_animation.svg" alt="BANNER" />
+          <img src="./assets/images/banners/banner_main_animation.svg" alt="BANNER" />
 
         </div>
 
