@@ -26,7 +26,7 @@ export const Header = () => {
       <div className="app__header_status_bar">
         <p>
           <span role='img' aria-label='' aria-labelledby=''>🔥</span> Join our telegram channel and keep up with the latest news.
-          <a href={TELEGRAM_CHANNEL_LINK}>Join the waitlist</a>
+          <a href={TELEGRAM_CHANNEL_LINK}>Join the channel</a>
         </p>
       </div>
 

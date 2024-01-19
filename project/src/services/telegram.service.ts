@@ -10,7 +10,7 @@ export class TelegramService {
    * @param chatId 
    * @param message 
    */
-  static sendMessage(chatId: number, message: string) {
+  static sendMessage(chatId: any, message: string) {
     return new Promise((resolve, reject) => {
       /** Request headers */
       const headers = new Headers();
